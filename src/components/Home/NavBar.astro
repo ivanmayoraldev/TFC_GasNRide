@@ -1,0 +1,104 @@
+<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md shadow-md">
+  <div class="max-w-7xl opacity-0.5 mx-auto px-4 py-4 sm:px-6 lg:px-8">
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+    <div class="flex flex-wrap items-center justify-between">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/logo.png" class="h-30" alt="Logo Gas N Ride" />
+      </a>
+
+      <button
+        id="menu-button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="md:hidden cursor-pointer text-black p-2 rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-600"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 17 14"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+
+      <div 
+        id="mobile-menu"
+        class="hidden peer-checked:flex w-full md:flex md:w-auto mt-4 md:mt-0
+         bg-transparent peer-checked:bg-black"
+      >
+        <ul
+          class="flex flex-col md:flex-row md:space-x-6 font-medium w-full md:items-center border md:border-0 rounded-lg p-4 md:p-0"
+        >
+          <li>
+            <a
+              href="/"
+              class="block py-2 px-3 text-black rounded-md md:p-0 hover:text-gray-500 transition text-shadow-custom"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#descripcion"
+              class="block py-2 px-3 text-black rounded-md md:p-0 hover:text-gray-500 transition text-shadow-custom"
+              >Información</a
+            >
+          </li>
+          <li>
+            <a
+              href="#creadores"
+              class="block py-2 px-3 text-black rounded-md md:p-0 hover:text-gray-500 transition text-shadow-custom"
+              >Creadores</a
+            >
+          </li>
+          <li>
+            <a
+              href="/demo"
+              class="block bg-[#A1E9D2] py-2 px-3 md:py-2 md:px-4 text-black rounded-md hover:border-2 border-2 transition shadow-md text-shadow-custom"
+              >Probar</a
+            >
+          </li>
+          <li>
+            <a
+              href="/download"
+              class="block btn-descargar-bg py-2 px-3 md:py-2 md:px-4 text-black rounded-md hover:border-2 border-2 transition shadow-md text-shadow-custom"
+            >
+              Descargar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Script puro, solo en navegador
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("menu-button");
+      const menu = document.getElementById("mobile-menu");
+
+      if (!btn || !menu) return; // Si no existen, salimos para evitar errores
+
+      btn.addEventListener("click", () => {
+        const isHidden = menu.classList.contains("hidden");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          btn.setAttribute("aria-expanded", "true");
+        } else {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            menu.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+    });
+  </script>
+</nav>

@@ -1,0 +1,32 @@
+<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black shadow-md">
+  <div class="max-w-7xl opacity-0.5 mx-auto px-4 py-4 sm:px-6 lg:px-8">
+
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+    <div class="flex flex-wrap items-center justify-between">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/logo.png" class="h-10" alt="Logo Gas N Ride" />
+        <span class="self-center text-xl font-semibold text-white">Gas N Ride</span>
+      </a>
+
+      <label for="menu-toggle"
+        class="md:hidden cursor-pointer text-white p-2 rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 17 14">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </label>
+
+      <div class="hidden peer-checked:flex w-full md:flex md:w-auto mt-4 md:mt-0">
+        <ul
+          class="flex flex-col md:flex-row md:space-x-6 font-medium w-full md:items-center bg-black border border-gray-700 md:border-0 rounded-lg p-4 md:p-0">
+          <li>
+            <a href="/demo" class="block bg-gray-800 py-2 px-3 md:py-2 md:px-4 text-white rounded-md hover:text-red-500 hover:border-red-600 hover:border-2 border transition shadow-md">Gas N Ride</a>
+          </li>
+          <li>
+            <a href="/download" class="block py-2 px-3 text-white bg-red-600 rounded-md text-center md:bg-red-600 md:hover:bg-red-700 md:py-2 md:px-4 transition">Descargar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,18 @@
+# Ignorar dependencias
+node_modules/
+
+# Ignorar entornos
+.env
+
+# Ignorar salidas de compilación
+dist/
+.build/
+
+# Ignorar editores
+.vscode/
+.DS_Store
+
+# Astro build output
+.astro/
+
+.firebasekey.json

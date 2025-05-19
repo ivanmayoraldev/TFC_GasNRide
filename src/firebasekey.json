@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gasolineras-9b4e4",
+  "private_key_id": "c6aaab5a0467465437f1e0e1b1a310f1aff218fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC68C/ySyVAXm3c\n7OkfPvOqUTc5/ZiHI7NNkEm/s4E5fweAkYaM5HfwJCQk8FGzLIANAUsIaTF72xkU\nEBBli0GmC9krjp+sYxpS7fQXsdAE3hAkwy8UUf2EIi+QeA+WCMa8ncZsy6L4Fhhb\nnne/W6HXjDQrps6CksyMrz8KisMrx9XmjdPDo/Jm9fE9JKGOTaFHBIGSrLParDbI\n54njuIE45i5UXGqL8tnP4TmPaIIBhF1BOqK+eSHHy/P8nKN1rVmbF/1iiAvL18rA\nhzvJ35PKjcW3pRHrJeSpbrhakv9KtbkfYjgqe1rwgYIsnP6RXQH/mDhvJx8B+VBB\naJ7OJS0ZAgMBAAECggEAIImT3tljh3uoJa76uJyNbtSqBybzuHnnSJXXsE0/LdHF\nbYRm5fkSQzMXM3K81bHmK91QwQsGOOeeytYs9G+zooInb6RoeGnbeBnAxasGaQJ5\nztxGQoQu2yPUIZI0LEokxUm08tTS7dlyree8Mgtx9QGLRxnGkgWZIteR4nTambDn\nIut4zUsfSlnUnjfOZp0TxIadjUYwAsiG4xvbMQgWW0aavh5NLmZCJDvel07k1+cM\n1oKcuQISI9pDjWOaIW7QNHZFKx3+W541s6rMYul08RVlO0uD9K8IPDfl3raOx0Vt\nZLRUlOaJXzk83OM75ndkjGkE2DExndiLWxFr+Cz43QKBgQDyq1BZt9+Sb9UyfvZz\n2qgZiXUpQEdLavqc3/NY/ojajYoQAgKbDq/ebuWUmhura1FEjP8UHbYP1XANdb2N\ng1Z8VRl0UCtxAdu2vwnNTaoBqkVZUyIpxu5hbu09bXT54azUEQe3Uo3N3mUmEeam\nZoAcpXBk844re0MsynLqLlGTwwKBgQDFNR9Gi8eu6C23rCZPT5w7BNnI2a88puPP\n6hqsQ3ATCQ68nSZ0pjtFpunDASlJP9JDd3LZklBRqYwCAQtO1lUfOa9pdtUhxB1O\n3/jogsQVRGKViVKPcd4gYwLhfx4fUAeCxywtBB1B5OuuLFmMzS6QNdTC3udvvmjo\n69g3KHq58wKBgD/gbmcfan9eZq1DFFaMsQD/2NJB9EJa55sRrDm5zoZRCY2LKeps\n5EhVwqLqKexmdF7qCl7eL0VdtoAkhP/SGZriv6+JRtYZWh9xi//5uI11p4mKw4xh\nq/ADxfkMbeU0zUyJKxHLbj5JkzCBN8iHZKOlvL8mCT9S0+zfYX5ZMOoHAoGBAJDW\nTCse3EB8q58bY2Oan67FCEK4hjhwhh6c3IwqV3TTkSw76xN/R0cHqOYcwzrWEdKV\nNxfOmwjvEjIinDCBwDDXyBoYOb67756PZps191d7S0Byg91wjuiQb3w4RWJP/8Qw\nDiTdwbM0s1fPoNGFnK4zqxiYZ7gtS5XOKZWROFm7AoGBANwmVl8aSn+X93b7s3qw\nuuVoATF9TEB2+rAqWMPndeJbUtL74Gui4meZ/Lutzprhz4lRuj+oIUEOXNReS4cE\nTFSHOaS8bsG2lay9/Q123wIVjFyaVBWdldWuru9G5TEsVOC3yi8TPNniUMDBFMau\nmFKwlXyafWVR44WZuYNwG1qS\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@gasolineras-9b4e4.iam.gserviceaccount.com",
+  "client_id": "117334515084522752306",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40gasolineras-9b4e4.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
