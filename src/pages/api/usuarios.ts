@@ -9,12 +9,16 @@ export const GET: APIRoute = async () => {
 
     return new Response(JSON.stringify(datos), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: 'Error al obtener usuarios' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
     });
   }
 };
