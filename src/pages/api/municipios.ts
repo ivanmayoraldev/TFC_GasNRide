@@ -8,6 +8,7 @@ export const GET: APIRoute = async () => {
     const datos = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
     return new Response(JSON.stringify(datos), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
