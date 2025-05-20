@@ -14,5 +14,3 @@ dist/
 
 # Astro build output
 .astro/
-
-.firebasekey.json

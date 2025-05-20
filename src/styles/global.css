@@ -23,6 +23,10 @@ body {
   background-color: #9DF1C0;
 }
 
+.btn-demo-bg {
+  background-color: #A1E9D2;
+}
+
 .fondo-degradado{
   background: linear-gradient(
       to bottom,
