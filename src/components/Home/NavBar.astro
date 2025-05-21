@@ -1,6 +1,4 @@
-<nav
-  class="fixed top-0 left-0 w-full z-50 backdrop-blur-md shadow-md bg-white/80"
->
+<nav class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride transition-colors duration-500">
   <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
@@ -34,47 +32,47 @@
         class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center mt-4 md:mt-0"
       >
         <ul
-          class="flex flex-col justify-center md:flex-row md:mt-2 md:space-x-6 font-medium w-full md:items-center border md:border-0 rounded-lg p-4 md:p-0 bg-black md:bg-transparent"
+          class="flex flex-col justify-center md:flex-row md:mt-2 md:space-x-6 font-medium w-full md:items-center border md:border-0 rounded-lg p-4 md:p-0"
         >
           <li>
             <a
               href="/"
-              class="block py-2 px-3 md:py-2 md:px-4 text-white mt-2 md:mt-0 md:text-black rounded-md hover:border-2 border-2 md:hover:border-0 md:border-0 transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
               >Home</a
             >
           </li>
           <li>
             <a
               href="#descripcion"
-              class="block py-2 px-3 md:py-2 md:px-4 text-white mt-2 md:mt-0 md:text-black rounded-md hover:border-2 border-2 md:hover:border-0 md:border-0 transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
               target="_blank">Información</a
             >
           </li>
           <li>
             <a
               href="#creadores"
-              class="block py-2 px-3 md:py-2 md:px-4 text-white mt-2 md:mt-0 md:text-black rounded-md hover:border-2 border-2 md:hover:border-0 md:border-0 transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
               target="_blank">Creadores</a
             >
           </li>
           <li>
             <a
               href="/demo"
-              class="block btn-demo-bg py-2 px-3 md:py-2 md:px-4 text-white mt-2 md:mt-0 md:text-black rounded-md hover:border-2 border-2 transition shadow-md text-shadow-custom"
+              class="btn-demo-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
               target="_blank">Probar</a
             >
           </li>
           <li>
             <a
               href="/download"
-              class="block btn-descargar-bg py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-white md:text-black rounded-md hover:border-2 border-2 transition shadow-md text-shadow-custom"
+              class="btn-descargar-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
               target="_blank"
             >
               Descargar
             </a>
           </li>
           <li
-            class="block py-2 px-3 md:py-2 md:px-4 text-white mt-2 md:mt-0 md:text-black rounded-md hover:border-2 border-2 md:hover:border-0 md:border-0 transition text-shadow-custom"
+            class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
           >
             <a
               href="/documentacion"
@@ -88,7 +86,7 @@
                 height="34.000000pt"
                 viewBox="0 0 48.000000 48.000000"
                 preserveAspectRatio="xMidYMid meet"
-                class="text-white md:text-black"
+                class="text-black"
               >
                 <g
                   transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)"
@@ -113,7 +111,7 @@
                 </g>
               </svg>
               <h2
-                class="text-white text-xl justify-center self-center text-center mx-auto md:hidden"
+                class="text-xl justify-center self-center text-center mx-auto md:hidden"
               >
                 Documentación de Gas N Ride
               </h2>
@@ -123,12 +121,13 @@
       </div>
     </div>
   </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const btn = document.getElementById("menu-button");
       const menu = document.getElementById("mobile-menu");
 
-      if (!btn || !menu) return; // Si no existen, salimos para evitar errores
+      if (!btn || !menu) return;
 
       btn.addEventListener("click", () => {
         const isHidden = menu.classList.contains("hidden");

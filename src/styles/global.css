@@ -27,11 +27,14 @@ body {
   background-color: #A1E9D2;
 }
 
+.bg-gas-n-ride {
+  background-color: #B9FFFF;
+}
+
 .fondo-degradado{
   background: linear-gradient(
       to bottom,
-    #B9FFFF 15%,    /* Empieza un poco más abajo */
-    #9DF2C0 90%,    /* Transición al segundo color */
+    #B9FFFF 15%,    /* Transición al segundo color */
     #9DF2C0 100%    /* Mantiene el segundo color al final */
   );
 }
