@@ -1,10 +1,10 @@
-<nav class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride transition-colors duration-500">
-  <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+<nav id="nav" class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride duration-200">
+  <div class="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
     <div class="flex flex-wrap items-center justify-between">
       <a href="/" class="flex items-center space-x-3">
-        <img src="/logo.png" class="h-30" alt="Logo Gas N Ride" />
+        <img src="/logo.png" class="h-24" alt="Logo Gas N Ride" />
       </a>
 
       <button
@@ -29,50 +29,50 @@
 
       <div
         id="mobile-menu"
-        class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center mt-4 md:mt-0"
+        class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center mt-4 md:mt-0 "
       >
         <ul
-          class="flex flex-col justify-center md:flex-row md:mt-2 md:space-x-6 font-medium w-full md:items-center border md:border-0 rounded-lg p-4 md:p-0"
+          class="flex flex-col justify-center md:flex-row md:mt-2 md:space-x-6 font-medium w-full md:items-center rounded-lg p-4 md:p-0"
         >
           <li>
             <a
               href="/"
-              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
               >Home</a
             >
           </li>
           <li>
             <a
               href="#descripcion"
-              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
               target="_blank">Información</a
             >
           </li>
           <li>
             <a
               href="#creadores"
-              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
               target="_blank">Creadores</a
             >
           </li>
           <li>
             <a
               href="/demo"
-              class="btn-demo-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
+              class="btn-demo-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
               target="_blank">Probar</a
             >
           </li>
           <li>
             <a
               href="/download"
-              class="btn-descargar-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
+              class="btn-descargar-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
               target="_blank"
             >
               Descargar
             </a>
           </li>
           <li
-            class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 text-black rounded-md transition text-shadow-custom"
+            class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
           >
             <a
               href="/documentacion"
@@ -122,20 +122,22 @@
     </div>
   </div>
 
-  <script>
+  <script type="module">
     document.addEventListener("DOMContentLoaded", () => {
       const btn = document.getElementById("menu-button");
       const menu = document.getElementById("mobile-menu");
-
       if (!btn || !menu) return;
 
       btn.addEventListener("click", () => {
         const isHidden = menu.classList.contains("hidden");
+        const nav = document.getElementById("nav");
         if (isHidden) {
           menu.classList.remove("hidden");
+          nav.classList.add("border-b-4", "border-black");
           btn.setAttribute("aria-expanded", "true");
         } else {
           menu.classList.add("hidden");
+          nav.classList.remove("border-b-4", "border-black");
           btn.setAttribute("aria-expanded", "false");
         }
       });
@@ -148,6 +150,14 @@
           }
         });
       });
+      window.addEventListener("scroll", () => {
+      const nav = document.getElementById("nav");
+      if (window.scrollY > 0) {
+        nav.classList.add("border-b-2", "border-black");
+      } else {
+        nav.classList.remove("border-b-2", "border-black");
+      }
+    });
     });
   </script>
 </nav>

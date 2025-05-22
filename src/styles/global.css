@@ -27,6 +27,10 @@ body {
   background-color: #A1E9D2;
 }
 
+.btn-repo-bg {
+  background-color: #9FE7E3;
+}
+
 .bg-gas-n-ride {
   background-color: #B9FFFF;
 }
@@ -34,7 +38,20 @@ body {
 .fondo-degradado{
   background: linear-gradient(
       to bottom,
-    #B9FFFF 15%,    /* Transición al segundo color */
-    #9DF2C0 100%    /* Mantiene el segundo color al final */
+    #B9FFFF 15%,  
+    #9DF2C0 100% 
   );
 }
+
+@keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
