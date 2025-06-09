@@ -1,17 +1,25 @@
-<nav id="nav" class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride duration-200">
+---
+import DarkMode from '../react-components/DarkMode.jsx'
+---
+
+<nav id="nav" class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride duration-200 dark:bg-black">
   <div class="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
     <div class="flex flex-wrap items-center justify-between">
-      <a href="/" class="flex items-center space-x-3">
-        <img src="/logo.png" class="h-24" alt="Logo Gas N Ride" />
+      <a href="/" class="flex items-center justify-center w-[200px] sm:w-[250px] md:w-[300px] transition transform hover:scale-105">
+        <img id="theme-logo" src="/logo.png" class="h-14 sm:h-16 md:h-20 w-auto object-contain" alt="Logo Gas N Ride" />
       </a>
+
+      <div class="md:hidden">
+        <DarkMode client:only="react" />
+      </div>
 
       <button
         id="menu-button"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="md:hidden cursor-pointer text-black p-2 rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-600"
+        class="md:hidden cursor-pointer text-black text-white-dark p-2 rounded-lg hover:bg-gray-200 hover:bg-gray-800-dark focus:outline-none focus:ring-2 focus:ring-gray-300"
       >
         <svg
           class="w-8 h-8"
@@ -29,93 +37,50 @@
 
       <div
         id="mobile-menu"
-        class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center mt-4 md:mt-0 "
+        class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center py-6 md:py-0 md:mt-0"
       >
         <ul
-          class="flex flex-col justify-center md:flex-row md:mt-2 md:space-x-6 font-medium w-full md:items-center rounded-lg p-4 md:p-0"
+          class="flex flex-col justify-center md:flex-row mt-2 md:mt-0 md:space-x-4 lg:space-x-6 font-medium w-full md:items-center rounded-lg p-4 md:p-0"
         >
           <li>
             <a
               href="/"
-              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black border-white-dark md:border-none text-black text-white-dark rounded-md transition text-shadow-custom hover:bg-gray-100 dark:hover:bg-gray-800 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
               >Home</a
             >
           </li>
           <li>
             <a
               href="#descripcion"
-              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
-              target="_blank">Información</a
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black border-white-dark md:border-none text-black text-white-dark rounded-md transition text-shadow-custom hover:bg-gray-100 dark:hover:bg-gray-800 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              >Docs</a
             >
           </li>
           <li>
             <a
               href="#creadores"
-              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
-              target="_blank">Creadores</a
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black border-white-dark md:border-none text-black text-white-dark rounded-md transition text-shadow-custom hover:bg-gray-100 dark:hover:bg-gray-800 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              >Creadores</a
             >
           </li>
           <li>
             <a
-              href="/demo"
-              class="btn-demo-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
-              target="_blank">Probar</a
+              href="https://github.com/ivanmayoraldev/TFC_GasNRide"
+              class="btn-repo-bg text-black dark:text-white block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 border-black dark:border-white rounded-md transition text-shadow-custom hover:bg-gray-700 dark:hover:bg-gray-900 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              target="_blank">Github</a
             >
           </li>
           <li>
             <a
               href="/download"
-              class="btn-descargar-bg block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
+              class="btn-descargar-bg text-black dark:text-white block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 border-black dark:border-white rounded-md transition text-shadow-custom hover:bg-gray-700 dark:hover:bg-gray-900 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
               target="_blank"
             >
               Descargar
             </a>
           </li>
-          <li
-            class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black md:border-none text-black rounded-md transition text-shadow-custom"
-          >
-            <a
-              href="/documentacion"
-              class="py-3 px-3 md:p-0 flex"
-              target="_blank"
-            >
-              <svg
-                version="1.0"
-                xmlns="http://www.w3.org/2000/svg"
-                width="34.000000pt"
-                height="34.000000pt"
-                viewBox="0 0 48.000000 48.000000"
-                preserveAspectRatio="xMidYMid meet"
-                class="text-black"
-              >
-                <g
-                  transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)"
-                  fill="currentColor"
-                  stroke="none"
-                >
-                  <path
-                    d="M107 412 c-14 -16 -17 -43 -17 -174 0 -196 -7 -188 152 -188 150 0
-          148 -2 148 147 l0 110 -64 61 -64 62 -70 0 c-54 0 -72 -4 -85 -18z m206 -60
-          l58 -58 -3 -110 -3 -109 -125 0 -125 0 -3 155 c-1 85 0 160 2 167 4 9 27 13
-          73 13 l69 0 57 -58z"
-                  ></path>
-
-                  <path
-                    d="M170 240 c0 -6 30 -10 70 -10 40 0 70 4 70 10 0 6 -30 10 -70 10 -40
-          0 -70 -4 -70 -10z"
-                  ></path>
-                  <path
-                    d="M170 160 c0 -6 30 -10 70 -10 40 0 70 4 70 10 0 6 -30 10 -70 10 -40
-          0 -70 -4 -70 -10z"
-                  ></path>
-                </g>
-              </svg>
-              <h2
-                class="text-xl justify-center self-center text-center mx-auto md:hidden"
-              >
-                Documentación de Gas N Ride
-              </h2>
-            </a>
+          <li class="hidden md:block md:ml-4">
+            <DarkMode client:only="react" />
           </li>
         </ul>
       </div>
@@ -150,14 +115,34 @@
           }
         });
       });
+
       window.addEventListener("scroll", () => {
-      const nav = document.getElementById("nav");
-      if (window.scrollY > 0) {
-        nav.classList.add("border-b-2", "border-black");
-      } else {
-        nav.classList.remove("border-b-2", "border-black");
+        const nav = document.getElementById("nav");
+        if (window.scrollY > 0) {
+          nav.classList.add("border-b-2", "border-black");
+        } else {
+          nav.classList.remove("border-b-2", "border-black");
+        }
+      });
+
+      // Theme logo switcher
+      const themeLogo = document.getElementById('theme-logo');
+      if (themeLogo) {
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-theme') {
+              themeLogo.src = document.documentElement.getAttribute('data-theme') === 'dark' 
+                ? '/logo_dark.png' 
+                : '/logo.png';
+            }
+          });
+        });
+
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-theme']
+        });
       }
-    });
     });
   </script>
 </nav>

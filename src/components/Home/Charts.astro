@@ -1,149 +1,137 @@
 <section
-  id="performance-charts"
-  class="text-black py-20 px-6 md:px-20 overflow-auto"
+  id="creadores"
+  class="text-black dark:text-white py-20 px-6 md:px-20 overflow-auto"
 >
-  <div class="flex flex-row items-center justify-center mx-auto">
-    <div id="creadores" class="flex flex-col max-w-4xl mr-6">
-      <h2 class="text-4xl font-bold leading-none">Creadores de</h2>
-      <span class="text-5xl font-bold leading-none">Gas N Ride</span>
-    </div>
-    <div>
-      <img src="./logo.png" alt="Logo" class="w-auto" />
+  <div class="flex flex-row items-center justify-center mx-auto mb-12">
+    <div id="creadores" class="flex flex-row items-center gap-2">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-none text-black dark:text-white">Creadores de</h2>
+      <span class="text-3xl sm:text-4xl md:text-5xl font-bold leading-none text-black dark:text-white">Gas N Ride</span>
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto bg-gray-800 rounded-lg p-6 shadow-lg">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-gray-700 rounded-lg p-4">
+  <div class="w-full max-w-7xl mx-auto bg-white dark:bg-gray-900 rounded-lg p-4 sm:p-6 shadow-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 border border-gray-200 dark:border-gray-700">
         <img
-          class="rounded-xl sm:size-48 lg:size-60 transition duration-300 group-hover:opacity-90"
+          class="rounded-xl w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 transition duration-300 group-hover:opacity-90 mx-auto border-4 border-gray-200 dark:border-gray-700 object-cover"
           src="https://t4.ftcdn.net/jpg/10/54/09/27/240_F_1054092780_liObYQo10Pn2xOo4CmGYZMeWiw0P7CT2.jpg"
           alt="Iván Mayoral - Foto"
         />
-        <div class="mt-4 sm:mt-4">
-          <h3 class="text-sm font-medium text-white sm:text-base lg:text-lg">
+        <div class="mt-4 sm:mt-6 text-center">
+          <h3 class="text-lg font-medium text-gray-800 dark:text-white sm:text-xl lg:text-2xl">
             Iván Mayoral Capel
           </h3>
-          <p class="text-xs text-gray-400 sm:text-sm lg:text-base">
+          <p class="text-sm text-gray-600 dark:text-gray-300 sm:text-base lg:text-lg mt-2">
             Desarrollador Web Frontend
           </p>
-          <p class="text-xs text-gray-500 sm:text-sm lg:text-base mt-3">
+          <p class="text-sm text-gray-500 dark:text-gray-400 sm:text-base lg:text-lg mt-4">
             Encargado del diseño web y la landing page de Gas N Ride
           </p>
         </div>
-        <div class="h-64">
-          <canvas id="ivanChart"></canvas>
-        </div>
-        <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white">
-          <div class="bg-gray-600 p-2 rounded">
+        <div class="mt-4 sm:mt-6 grid grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-base">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Landing Page: </span> 100%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Diseño: </span> 100%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">API: </span> 80%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Base de datos: </span> 33%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Desarrollo APP Móvil: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Documentación: </span> 33%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Presentación:</span> 33%
           </div>
         </div>
       </div>
 
-      <div class="bg-gray-700 rounded-lg p-4">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 border border-gray-200 dark:border-gray-700">
         <img
-          class="rounded-xl sm:size-48 lg:size-60 transition duration-300 group-hover:opacity-90"
+          class="rounded-xl w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 transition duration-300 group-hover:opacity-90 mx-auto border-4 border-gray-200 dark:border-gray-700 object-cover"
           src="https://t4.ftcdn.net/jpg/10/54/09/27/240_F_1054092780_liObYQo10Pn2xOo4CmGYZMeWiw0P7CT2.jpg"
           alt="Alejandro Sánchez - Foto"
         />
-        <div class="mt-4 sm:mt-4">
-          <h3 class="text-sm font-medium text-white sm:text-base lg:text-lg">
+        <div class="mt-4 sm:mt-6 text-center">
+          <h3 class="text-lg font-medium text-gray-800 dark:text-white sm:text-xl lg:text-2xl">
             Alejandro Sánchez Garcia de la Llave
           </h3>
-          <p class="text-xs text-gray-400 sm:text-sm lg:text-base">
+          <p class="text-sm text-gray-600 dark:text-gray-300 sm:text-base lg:text-lg mt-2">
             Programador de la versión móvil
           </p>
-          <p class="text-xs text-gray-500 sm:text-sm lg:text-base mt-3">
+          <p class="text-sm text-gray-500 dark:text-gray-400 sm:text-base lg:text-lg mt-4">
             Gestor principal de base de datos y desarrollo móvil.
           </p>
         </div>
-        <div class="h-64">
-          <canvas id="alejandroChart"></canvas>
-        </div>
-        <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white">
-          <div class="bg-gray-600 p-2 rounded">
+        <div class="mt-4 sm:mt-6 grid grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-base">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Landing Page: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Diseño: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">API: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Base de datos: </span> 33%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Desarrollo APP Móvil: </span> 45%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Documentación: </span> 33%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Presentación:</span> 33%
           </div>
         </div>
       </div>
 
-      <div class="bg-gray-700 rounded-lg p-4">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 border border-gray-200 dark:border-gray-700">
         <img
-          class="rounded-xl sm:size-48 lg:size-60 transition duration-300 group-hover:opacity-90"
+          class="rounded-xl w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 transition duration-300 group-hover:opacity-90 mx-auto border-4 border-gray-200 dark:border-gray-700 object-cover"
           src="https://t4.ftcdn.net/jpg/10/54/09/27/240_F_1054092780_liObYQo10Pn2xOo4CmGYZMeWiw0P7CT2.jpg"
           alt="Alexia Patricia Mena Suárez - Foto"
         />
-        <div class="mt-4 sm:mt-4">
-          <h3 class="text-sm font-medium text-white sm:text-base lg:text-lg">
+        <div class="mt-4 sm:mt-6 text-center">
+          <h3 class="text-lg font-medium text-gray-800 dark:text-white sm:text-xl lg:text-2xl">
             Alexia Patricia Mena Suárez
           </h3>
-          <p class="text-xs text-gray-400 sm:text-sm lg:text-base">
+          <p class="text-sm text-gray-600 dark:text-gray-300 sm:text-base lg:text-lg mt-2">
             Programadora de la versión móvil
           </p>
-          <p class="text-xs text-gray-500 sm:text-sm lg:text-base mt-3">
+          <p class="text-sm text-gray-500 dark:text-gray-400 sm:text-base lg:text-lg mt-4">
             Co-gestora de base de datos y desarrollo móvil.
           </p>
         </div>
-        <div class="h-64">
-          <canvas id="alexiaChart"></canvas>
-        </div>
-        <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white">
-          <div class="bg-gray-600 p-2 rounded">
+        <div class="mt-4 sm:mt-6 grid grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-base">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Landing Page: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Diseño: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">API: </span> 10%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Base de datos: </span> 33%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Desarrollo APP Móvil: </span> 45%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Documentación: </span> 33%
           </div>
-          <div class="bg-gray-600 p-2 rounded">
+          <div class="bg-gray-100 dark:bg-gray-700/50 p-2 sm:p-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-gray-700 dark:text-gray-200">
             <span class="font-medium">Presentación:</span> 33%
           </div>
         </div>
@@ -151,46 +139,13 @@
     </div>
 
     <div class="mt-8 flex flex-col md:flex-row justify-between items-center">
-      <div
-        class="mt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-      >
+      <div class="mt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div class="flex flex-wrap gap-4">
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
-            <span class="text-sm text-white">Landing Page</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
-            <span class="text-sm text-white">Diseño</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
-            <span class="text-sm text-white">API</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-purple-500 rounded-full mr-2"></div>
-            <span class="text-sm text-white">Base de datos</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-pink-500 rounded-full mr-2"></div>
-            <span class="text-sm text-white">Desarrollo APP Móvil</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-purple-200 rounded-full mr-2"></div>
-            <span class="text-sm text-white">Documentación</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
-            <span class="text-sm text-white">Presentación</span>
-          </div>
+          
         </div>
       </div>
 
-      <div class="flex space-x-2 items-center mt-10">
-        <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg"
-          >Gas N Ride - TFC</button
-        >
-      </div>
+      
     </div>
   </div>
 </section>
@@ -297,3 +252,4 @@
     });
   });
 </script>
+

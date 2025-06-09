@@ -2,6 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Colores */
+  --body_background: #ffffff;
+  --text_color: #000000;
+  --text_span: #1d4ed8;
+  --nav_background: #B9FFFF;
+  --btn_download_bg: #9DF1C0;
+  --btn_demo_bg: #A1E9D2;
+  --btn_repo_bg: #9FE7E3;
+  --border_color: #000000;
+  --hover_bg: #e5e7eb;
+  --input_bg: #ffffff;
+  --input_text: #000000;
+  --input_border: #000000;
+
+  /* Sombras */
+  --text_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* Gradientes */
+  --gradient_start: var(--nav_background);
+  --gradient_end: var(--btn_download_bg);
+  --gradient_start_percent: 15%;
+  --gradient_end_percent: 100%;
+
+  /* Animaciones */
+  --marquee_duration: 20s;
+}
+
+[data-theme="dark"] {
+  /* Colores */
+  --body_background: #18181b;
+  --text_color: #ffffff;
+  --text_span: #eab308;
+  --nav_background: #23272f;
+  --btn_download_bg: #334155;
+  --btn_demo_bg: #475569;
+  --btn_repo_bg: #64748b;
+  --border_color: #ffffff;
+  --hover_bg: #1f2937;
+  --input_bg: #0F2D2B;
+  --input_text: #ffffff;
+  --input_border: #ffffff;
+
+  /* Sombras */
+  --text_shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+
+  /* Gradientes */
+  --gradient_start: var(--nav_background);
+  --gradient_end: var(--btn_download_bg);
+  --gradient_start_percent: 15%;
+  --gradient_end_percent: 100%;
+
+  /* Clases específicas para dark mode */
+  .text-black {
+    color: var(--text_color);
+  }
+
+  .border-black {
+    border-color: var(--border_color);
+  }
+
+  .hover\:bg-gray-200:hover {
+    background-color: var(--hover_bg);
+  }
+
+  .text-white-dark {
+    color: var(--text_color);
+  }
+
+  .bg-gray-800-dark {
+    background-color: var(--hover_bg);
+  }
+
+  .border-white-dark {
+    border-color: var(--border_color);
+  }
+
+  .hover\:bg-gray-800-dark:hover {
+    background-color: var(--hover_bg);
+  }
+
+  input, textarea {
+    background-color: var(--input_bg);
+    color: var(--input_text);
+    border-color: var(--input_border);
+  }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -13,34 +101,40 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: 'Cal Sans', sans-serif;
+  background-color: var(--body_background);
+  color: var(--text_color);
 }
 
 .text-shadow-custom {
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: var(--text_shadow);
 }
 
 .btn-descargar-bg {
-  background-color: #9DF1C0;
+  background-color: var(--btn_download_bg);
 }
 
 .btn-demo-bg {
-  background-color: #A1E9D2;
+  background-color: var(--btn_demo_bg);
 }
 
 .btn-repo-bg {
-  background-color: #9FE7E3;
+  background-color: var(--btn_repo_bg);
 }
 
 .bg-gas-n-ride {
-  background-color: #B9FFFF;
+  background-color: var(--nav_background);
 }
 
 .fondo-degradado{
   background: linear-gradient(
       to bottom,
-    #B9FFFF 15%,  
-    #9DF2C0 100% 
+    var(--gradient_start) var(--gradient_start_percent),  
+    var(--gradient_end) var(--gradient_end_percent)
   );
+}
+
+.text-span {
+  color: var(--text_span);
 }
 
 @keyframes marquee {
@@ -53,5 +147,9 @@ body {
   }
 
   .animate-marquee {
-    animation: marquee 20s linear infinite;
+    animation: marquee var(--marquee_duration) linear infinite;
   }
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -1,32 +1,141 @@
-<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black shadow-md">
-  <div class="max-w-7xl opacity-0.5 mx-auto px-4 py-4 sm:px-6 lg:px-8">
+---
+import DarkMode from '../react-components/DarkMode.jsx'
+---
 
+<nav id="nav" class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride duration-200 dark:bg-black">
+  <div class="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
     <div class="flex flex-wrap items-center justify-between">
-      <a href="/" class="flex items-center space-x-3">
-        <img src="/logo.png" class="h-10" alt="Logo Gas N Ride" />
-        <span class="self-center text-xl font-semibold text-white">Gas N Ride</span>
+      <a href="/" class="flex items-center justify-center w-[200px] sm:w-[250px] md:w-[300px] transition transform hover:scale-105">
+        <img id="theme-logo" src="/logo.png" class="h-14 sm:h-16 md:h-20 w-auto object-contain" alt="Logo Gas N Ride" />
       </a>
 
-      <label for="menu-toggle"
-        class="md:hidden cursor-pointer text-white p-2 rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-600">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 17 14">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M1 1h15M1 7h15M1 13h15" />
-        </svg>
-      </label>
+      <div class="md:hidden">
+        <DarkMode client:only="react" />
+      </div>
 
-      <div class="hidden peer-checked:flex w-full md:flex md:w-auto mt-4 md:mt-0">
+      <button
+        id="menu-button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="md:hidden cursor-pointer text-black text-white-dark p-2 rounded-lg hover:bg-gray-200 hover:bg-gray-800-dark focus:outline-none focus:ring-2 focus:ring-gray-300"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M1 1h15M1 7h15M1 13h15"></path>
+        </svg>
+      </button>
+
+      <div
+        id="mobile-menu"
+        class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center py-6 md:py-0 md:mt-0"
+      >
         <ul
-          class="flex flex-col md:flex-row md:space-x-6 font-medium w-full md:items-center bg-black border border-gray-700 md:border-0 rounded-lg p-4 md:p-0">
+          class="flex flex-col justify-center md:flex-row mt-2 md:mt-0 md:space-x-4 lg:space-x-6 font-medium w-full md:items-center rounded-lg p-4 md:p-0"
+        >
           <li>
-            <a href="/demo" class="block bg-gray-800 py-2 px-3 md:py-2 md:px-4 text-white rounded-md hover:text-red-500 hover:border-red-600 hover:border-2 border transition shadow-md">Gas N Ride</a>
+            <a
+              href="/"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black border-white-dark md:border-none text-black text-white-dark rounded-md transition text-shadow-custom hover:bg-gray-100 dark:hover:bg-gray-800 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              >Home</a
+            >
           </li>
           <li>
-            <a href="/download" class="block py-2 px-3 text-white bg-red-600 rounded-md text-center md:bg-red-600 md:hover:bg-red-700 md:py-2 md:px-4 transition">Descargar</a>
+            <a
+              href="#novedades"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black border-white-dark md:border-none text-black text-white-dark rounded-md transition text-shadow-custom hover:bg-gray-100 dark:hover:bg-gray-800 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              >Novedades</a
+            >
+          </li>
+          <li>
+            <a
+              href="#capturas"
+              class="block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 md:border-0 border-black border-white-dark md:border-none text-black text-white-dark rounded-md transition text-shadow-custom hover:bg-gray-100 dark:hover:bg-gray-800 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              >Capturas</a
+            >
+          </li>
+          <li>
+            <a
+              href="/download"
+              class="btn-descargar-bg text-black dark:text-white block py-2 px-3 md:py-2 md:px-4 mt-2 md:mt-0 border-2 border-black dark:border-white rounded-md transition text-shadow-custom hover:bg-gray-700 dark:hover:bg-gray-900 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:scale-105 md:transform"
+              target="_blank"
+            >
+              Descargar
+            </a>
+          </li>
+          <li class="hidden md:block md:ml-4">
+            <DarkMode client:only="react" />
           </li>
         </ul>
       </div>
     </div>
   </div>
+
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("menu-button");
+      const menu = document.getElementById("mobile-menu");
+      if (!btn || !menu) return;
+
+      btn.addEventListener("click", () => {
+        const isHidden = menu.classList.contains("hidden");
+        const nav = document.getElementById("nav");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          nav.classList.add("border-b-4", "border-black");
+          btn.setAttribute("aria-expanded", "true");
+        } else {
+          menu.classList.add("hidden");
+          nav.classList.remove("border-b-4", "border-black");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            menu.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("nav");
+        if (window.scrollY > 0) {
+          nav.classList.add("border-b-2", "border-black");
+        } else {
+          nav.classList.remove("border-b-2", "border-black");
+        }
+      });
+
+      // Theme logo switcher
+      const themeLogo = document.getElementById('theme-logo');
+      if (themeLogo) {
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-theme') {
+              themeLogo.src = document.documentElement.getAttribute('data-theme') === 'dark' 
+                ? '/logo_dark.png' 
+                : '/logo.png';
+            }
+          });
+        });
+
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-theme']
+        });
+      }
+    });
+  </script>
 </nav>
