@@ -1,37 +1,38 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+// Clave y duración del caché para almacenar los datos localmente
 const CACHE_KEY = 'gas_n_ride_data';
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
-const PAGE_SIZE = 12;
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
 
 const Documentation = () => {
+  // Estados para manejar la sección seleccionada, tema oscuro y menú
   const [selectedSection, setSelectedSection] = useState('Gas N Ride');
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+  // Estados para almacenar los datos de la API
   const [municipios, setMunicipios] = useState([]);
   const [puntosInteres, setPuntosInteres] = useState([]);
   const [gasolineras, setGasolineras] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const hasFetchedData = useRef(false);
-  const [visibleMunicipios, setVisibleMunicipios] = useState(PAGE_SIZE);
-  const [visibleGasolineras, setVisibleGasolineras] = useState(PAGE_SIZE);
-  const [visiblePuntosInteres, setVisiblePuntosInteres] = useState(PAGE_SIZE);
 
-  // Función para verificar si el caché es válido
+  // Referencia para controlar si ya se han cargado los datos
+  const hasFetchedData = useRef(false);
+
+  // Función que verifica si los datos en caché siguen siendo válidos
   const isCacheValid = (cacheData) => {
     if (!cacheData) return false;
     const now = new Date().getTime();
     return cacheData.timestamp && (now - cacheData.timestamp < CACHE_DURATION);
   };
 
-  // Función para cargar datos del caché
+  // Función para cargar datos desde el caché local
   const loadFromCache = () => {
     try {
       const cachedData = localStorage.getItem(CACHE_KEY);
       if (cachedData) {
         const parsedData = JSON.parse(cachedData);
         if (isCacheValid(parsedData)) {
-          console.log('Loading data from cache');
           setMunicipios(parsedData.municipios);
           setPuntosInteres(parsedData.puntosInteres);
           setGasolineras(parsedData.gasolineras);
@@ -41,12 +42,12 @@ const Documentation = () => {
       }
       return false;
     } catch (error) {
-      console.error('Error loading from cache:', error);
+      console.error('Error al cargar caché:', error);
       return false;
     }
   };
 
-  // Función para guardar datos en el caché
+  // Función para guardar datos en el caché local
   const saveToCache = (data) => {
     try {
       const cacheData = {
@@ -54,30 +55,18 @@ const Documentation = () => {
         timestamp: new Date().getTime()
       };
       localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
-      console.log('Data saved to cache');
     } catch (error) {
-      console.error('Error saving to cache:', error);
+      console.error('Error al guardar en caché:', error);
     }
   };
 
-  const handleScroll = (type) => (e) => {
-    const { scrollTop, scrollHeight, clientHeight } = e.target;
-    if (scrollTop + clientHeight >= scrollHeight - 10) {
-      if (type === 'municipios') {
-        setVisibleMunicipios((prev) => Math.min(prev + PAGE_SIZE, municipios.length));
-      } else if (type === 'gasolineras') {
-        setVisibleGasolineras((prev) => Math.min(prev + PAGE_SIZE, gasolineras.length));
-      } else if (type === 'puntos_interes') {
-        setVisiblePuntosInteres((prev) => Math.min(prev + PAGE_SIZE, puntosInteres.length));
-      }
-    }
-  };
-
+  // Efecto principal que se ejecuta al montar el componente
   useEffect(() => {
-    // Verificar el tema inicial
+    // Comprobar si el tema oscuro está activado
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     setIsDarkMode(isDark);
 
+    // Observador para detectar cambios en el tema
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'data-theme') {
@@ -92,42 +81,35 @@ const Documentation = () => {
       attributeFilter: ['data-theme']
     });
 
-    // Forzar limpieza de caché
+    // Limpiar caché al cargar
     localStorage.removeItem(CACHE_KEY);
-    console.log('Cache cleared');
 
-    // Cargar datos de la API
+    // Función para obtener datos de la API
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        console.log('Fetching from API...');
 
+        // Realizar peticiones a la API
         const [municipiosRes, puntosInteresRes, gasolinerasRes] = await Promise.all([
           fetch('https://gas-n-ride-api-iq2n.vercel.app/municipios'),
           fetch('https://gas-n-ride-api-iq2n.vercel.app/puntos_interes'),
           fetch('https://gas-n-ride-api-iq2n.vercel.app/gasolineras')
         ]);
 
+        // Convertir respuestas a JSON
         const [municipiosData, puntosInteresData, gasolinerasData] = await Promise.all([
           municipiosRes.json(),
           puntosInteresRes.json(),
           gasolinerasRes.json()
         ]);
 
-        // Log detallado de la estructura de datos
-        console.log('Estructura completa del primer municipio:', JSON.stringify(municipiosData[0], null, 2));
-        console.log('Campos disponibles en municipio:', Object.keys(municipiosData[0]));
-
-        // Optimizar datos según lo solicitado
-        const municipiosOptimizados = municipiosData.map(municipio => {
-          console.log('Procesando municipio:', municipio.nombre, 'con imagen:', municipio.imagen_url);
-          return {
-            id: municipio.id,
-            nombre: municipio.nombre,
-            num_gasolineras: municipio.num_gasolineras,
-            imagen_url: municipio.imagen_url
-          };
-        });
+        // Procesar y optimizar los datos
+        const municipiosOptimizados = municipiosData.map(municipio => ({
+          id: municipio.id,
+          nombre: municipio.nombre,
+          num_gasolineras: municipio.num_gasolineras,
+          imagen_url: municipio.imagen_url
+        }));
 
         const gasolinerasOptimizadas = gasolinerasData.map(gasolinera => ({
           id: gasolinera.id,
@@ -153,14 +135,13 @@ const Documentation = () => {
           gasolineras: gasolinerasOptimizadas
         };
 
+        // Actualizar estados y caché
         setMunicipios(municipiosOptimizados);
         setPuntosInteres(puntosInteresOptimizados);
         setGasolineras(gasolinerasOptimizadas);
         saveToCache(optimizedData);
-        
-        console.log('Data fetched and cached successfully');
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error al obtener datos:', error);
       } finally {
         setIsLoading(false);
       }
@@ -171,6 +152,7 @@ const Documentation = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Definición de las secciones del menú
   const sections = [
     {
       id: 'Gas N Ride',
@@ -211,22 +193,14 @@ const Documentation = () => {
     }
   ];
 
+  // Función para renderizar la cuadrícula de datos
   const renderDataGrid = (data, type) => {
     if (isLoading) return <p>Cargando datos...</p>;
     if (!data || data.length === 0) return <p>No hay datos disponibles</p>;
 
-    let visibleCount = PAGE_SIZE;
-    if (type === 'municipios') visibleCount = visibleMunicipios;
-    if (type === 'gasolineras') visibleCount = visibleGasolineras;
-    if (type === 'puntos_interes') visibleCount = visiblePuntosInteres;
-
     return (
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto max-h-[600px]"
-        style={{ minHeight: '200px' }}
-        onScroll={handleScroll(type)}
-      >
-        {data.slice(0, visibleCount).map((item) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto max-h-[600px]" style={{ minHeight: '200px' }}>
+        {data.map((item) => (
           <div key={item.id} className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} hover:shadow-lg transition-shadow duration-300`}>
             {type === 'municipios' && (
               <a 
@@ -244,8 +218,6 @@ const Documentation = () => {
                       alt={item.nombre}
                       className="object-cover w-full h-full"
                       onError={(e) => {
-                        console.log('Error cargando imagen para:', item.nombre);
-                        console.log('URL de la imagen:', item.imagen_url);
                         e.target.onerror = null;
                         e.target.src = 'https://via.placeholder.com/400x300?text=Sin+imagen';
                       }}
@@ -290,9 +262,11 @@ const Documentation = () => {
     );
   };
 
+  // Renderizado principal del componente
   return (
     <div className={`h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} rounded-2xl overflow-hidden`}>
       <div className="w-full max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 h-full flex flex-col">
+        {/* Cabecera con botón de menú y título */}
         <div className="flex items-center justify-between mb-4 sm:mb-6 lg:mb-8">
           <div className="flex items-center gap-4">
             <button
@@ -323,7 +297,9 @@ const Documentation = () => {
           </div>
         </div>
 
+        {/* Contenedor principal con menú lateral y contenido */}
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8 flex-1 overflow-hidden">
+          {/* Menú lateral */}
           <div 
             className={`w-full lg:w-72 xl:w-80 transition-all duration-300 ease-in-out ${
               isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
@@ -355,6 +331,7 @@ const Documentation = () => {
             </nav>
           </div>
 
+          {/* Contenido principal */}
           <div className="flex-1 overflow-y-auto">
             {sections.map((section) => (
               <div

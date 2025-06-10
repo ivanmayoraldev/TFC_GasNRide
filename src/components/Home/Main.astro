@@ -1,11 +1,20 @@
+<!-- 
+  Componente principal de la landing page
+  Autor: Iván Mayoral Capel
+  Fecha: Marzo 2024
+  Descripción: Sección principal que muestra el título, botones de acción y tecnologías utilizadas
+-->
+
 <section
   id="main"
   class="relative w-full min-h-screen overflow-hidden pt-16 sm:pt-20 md:pt-24"
 >
+  <!-- Contenedor principal con z-index para asegurar que esté por encima de otros elementos -->
   <div class="relative z-20 flex flex-col items-center justify-center min-h-screen">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Mobile & Tablet Layout -->
+      <!-- Layout para móvil y tablet -->
       <div class="flex flex-col items-center text-center lg:hidden">
+        <!-- Título y subtítulos -->
         <div class="space-y-4 mb-8 md:mb-12 px-6 sm:px-8">
           <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white">
             Gas N Ride
@@ -21,6 +30,7 @@
           </span>
         </div>
 
+        <!-- Botones de acción -->
         <div class="flex flex-row items-center gap-4 mb-12 md:mb-16 px-6 sm:px-8 w-full">
           <a
             href="https://github.com/ivanmayoraldev/TFC_GasNRide"
@@ -37,7 +47,7 @@
           </a>
         </div>
 
-        <!-- Image and Search for Mobile & Tablet -->
+        <!-- Imagen principal y barra de búsqueda para móvil -->
         <div class="w-full md:max-w-2xl px-6 sm:px-8">
           <div class="relative">
             <img
@@ -49,10 +59,10 @@
           </div>
         </div>
 
-        <!-- Search and Tech section container for Mobile & Tablet -->
+        <!-- Sección de búsqueda y tecnologías para móvil -->
         <div class="w-full md:max-w-2xl px-6 sm:px-8 mt-8 lg:hidden">
           <div class="flex flex-col xl:flex-row items-start xl:items-center gap-8 xl:gap-4">
-            <!-- Search Input -->
+            <!-- Input de búsqueda -->
             <div class="w-full xl:w-1/3 relative">
               <svg
                 class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400"
@@ -71,44 +81,40 @@
               />
             </div>
 
-            <!-- Tech section -->
+            <!-- Carrusel de tecnologías -->
             <div class="w-full xl:w-2/3 flex flex-nowrap sm:flex-wrap overflow-hidden sm:overflow-x-visible justify-start sm:justify-center xl:justify-start items-center gap-4 sm:gap-6">
+              <!-- Versión móvil con animación -->
               <div class="flex sm:hidden animate-scroll">
                 <div class="flex gap-4">
-                  <img src="/tech/figma.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/astro.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/firebase.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/react.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/kotlin.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/nodejs.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/tailwindCSS.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/figma.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/astro.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/firebase.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/react.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/kotlin.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/nodejs.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
-                  <img src="/tech/tailwindCSS.png" alt="" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/figma.png" alt="Figma" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/astro.png" alt="Astro" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/firebase.png" alt="Firebase" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/react.png" alt="React" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/kotlin.png" alt="Kotlin" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/nodejs.png" alt="Node.js" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
+                  <img src="/tech/tailwindCSS.png" alt="Tailwind CSS" class="h-12 w-auto transition transform hover:scale-105 flex-shrink-0" />
                 </div>
               </div>
+              <!-- Versión tablet -->
               <div class="hidden sm:flex flex-wrap justify-center xl:justify-start items-center gap-4 sm:gap-6">
-                <img src="/tech/figma.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
-                <img src="/tech/astro.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
-                <img src="/tech/firebase.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
-                <img src="/tech/react.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
-                <img src="/tech/kotlin.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
-                <img src="/tech/nodejs.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
-                <img src="/tech/tailwindCSS.png" alt="" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/figma.png" alt="Figma" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/astro.png" alt="Astro" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/firebase.png" alt="Firebase" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/react.png" alt="React" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/kotlin.png" alt="Kotlin" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/nodejs.png" alt="Node.js" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
+                <img src="/tech/tailwindCSS.png" alt="Tailwind CSS" class="h-12 sm:h-14 w-auto transition transform hover:scale-105" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Desktop Layout -->
+      <!-- Layout para escritorio -->
       <div class="hidden lg:flex items-start justify-between gap-12">
-        <!-- Left Column -->
+        <!-- Columna izquierda -->
         <div class="w-1/2 space-y-8">
+          <!-- Título y subtítulos -->
           <div class="space-y-4">
             <h1 class="text-7xl font-bold text-black dark:text-white">
               Gas N Ride
@@ -124,6 +130,7 @@
             </span>
           </div>
 
+          <!-- Botones de acción -->
           <div class="flex gap-4">
             <a
               href="https://github.com/ivanmayoraldev/TFC_GasNRide"
@@ -140,20 +147,21 @@
             </a>
           </div>
 
-          <!-- Tech section -->
+          <!-- Sección de tecnologías -->
           <div class="flex justify-start items-center gap-6 pt-20">
-            <img src="/tech/figma.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
-            <img src="/tech/astro.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
-            <img src="/tech/firebase.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
-            <img src="/tech/react.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
-            <img src="/tech/nodejs.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
-            <img src="/tech/kotlin.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
-            <img src="/tech/tailwindCSS.png" alt="" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/figma.png" alt="Figma" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/astro.png" alt="Astro" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/firebase.png" alt="Firebase" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/react.png" alt="React" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/nodejs.png" alt="Node.js" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/kotlin.png" alt="Kotlin" class="h-14 w-auto transition transform hover:scale-105" />
+            <img src="/tech/tailwindCSS.png" alt="Tailwind CSS" class="h-14 w-auto transition transform hover:scale-105" />
           </div>
         </div>
 
-        <!-- Right Column -->
+        <!-- Columna derecha -->
         <div class="w-1/2 space-y-8">
+          <!-- Imagen principal -->
           <div class="relative">
             <img
               id="theme-image-desktop"
@@ -163,7 +171,7 @@
             />
           </div>
 
-          <!-- Search Input -->
+          <!-- Barra de búsqueda -->
           <div class="relative w-full">
             <svg
               class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400"
@@ -187,65 +195,65 @@
   </div>
 
   <script>
-    // Typing animation for mobile/tablet
-    const input = document.getElementById("search-input") as HTMLInputElement;
-    const inputDesktop = document.getElementById("search-input-desktop") as HTMLInputElement;
-    const texts = ["Madrid", "Municipios", "Gasolineras", "Puntos de Interés"];
-    let currentTextIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let delay = 150;
+    // Animación de escritura para la barra de búsqueda
+    const input = document.getElementById("search-input");
+    const inputDesktop = document.getElementById("search-input-desktop");
+    const textos = ["Madrid", "Municipios", "Gasolineras", "Puntos de Interés"];
+    let indiceTexto = 0;
+    let indiceCaracter = 0;
+    let borrando = false;
+    let retraso = 150;
 
-    function type() {
+    function escribir() {
       if (!input || !inputDesktop) return;
       
-      const currentText = texts[currentTextIndex];
-      if (!isDeleting) {
-        input.value = currentText.slice(0, charIndex + 1);
-        inputDesktop.value = currentText.slice(0, charIndex + 1);
-        charIndex++;
+      const textoActual = textos[indiceTexto];
+      if (!borrando) {
+        input.value = textoActual.slice(0, indiceCaracter + 1);
+        inputDesktop.value = textoActual.slice(0, indiceCaracter + 1);
+        indiceCaracter++;
 
-        if (charIndex === currentText.length) {
-          isDeleting = true;
-          delay = 1000;
+        if (indiceCaracter === textoActual.length) {
+          borrando = true;
+          retraso = 1000;
         } else {
-          delay = 150;
+          retraso = 150;
         }
       } else {
-        input.value = currentText.slice(0, charIndex - 1);
-        inputDesktop.value = currentText.slice(0, charIndex - 1);
-        charIndex--;
+        input.value = textoActual.slice(0, indiceCaracter - 1);
+        inputDesktop.value = textoActual.slice(0, indiceCaracter - 1);
+        indiceCaracter--;
 
-        if (charIndex === 0) {
-          isDeleting = false;
-          currentTextIndex = (currentTextIndex + 1) % texts.length;
-          delay = 500;
+        if (indiceCaracter === 0) {
+          borrando = false;
+          indiceTexto = (indiceTexto + 1) % textos.length;
+          retraso = 500;
         } else {
-          delay = 100;
+          retraso = 100;
         }
       }
-      setTimeout(type, delay);
+      setTimeout(escribir, retraso);
     }
 
-    type();
+    escribir();
 
-    // Theme image switcher
-    const themeImage = document.getElementById('theme-image') as HTMLImageElement;
-    const themeImageDesktop = document.getElementById('theme-image-desktop') as HTMLImageElement;
+    // Cambio de imagen según el tema
+    const imagenTema = document.getElementById('theme-image');
+    const imagenTemaDesktop = document.getElementById('theme-image-desktop');
     
-    if (themeImage && themeImageDesktop) {
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.attributeName === 'data-theme') {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            const newSrc = isDark ? '/Imagen Landing Page - Dark.png' : './imagenprincipal.png';
-            themeImage.src = newSrc;
-            themeImageDesktop.src = newSrc;
+    if (imagenTema && imagenTemaDesktop) {
+      const observador = new MutationObserver((mutaciones) => {
+        mutaciones.forEach((mutacion) => {
+          if (mutacion.attributeName === 'data-theme') {
+            const esOscuro = document.documentElement.getAttribute('data-theme') === 'dark';
+            const nuevaSrc = esOscuro ? '/Imagen Landing Page - Dark.png' : './imagenprincipal.png';
+            imagenTema.src = nuevaSrc;
+            imagenTemaDesktop.src = nuevaSrc;
           }
         });
       });
 
-      observer.observe(document.documentElement, {
+      observador.observe(document.documentElement, {
         attributes: true,
         attributeFilter: ['data-theme']
       });
@@ -253,6 +261,7 @@
   </script>
 
   <style>
+    /* Animación del carrusel de tecnologías */
     @keyframes scroll {
       0% {
         transform: translateX(0);
@@ -271,15 +280,14 @@
       animation-play-state: paused;
     }
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
+    /* Ocultar barra de desplazamiento */
     .overflow-hidden::-webkit-scrollbar {
       display: none;
     }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
     .overflow-hidden {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </section>

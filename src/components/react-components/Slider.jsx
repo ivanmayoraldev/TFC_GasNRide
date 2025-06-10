@@ -1,21 +1,18 @@
 import React, { useRef, useEffect, useState } from "react";
 
 const images = [
-  {
-    src: "/capturas/1 Pantalla Inicial (white).png",
-    title: "Pantalla Inicial",
-  },
+  {src: "/capturas/1 Pantalla Inicial (white).png"},
   { src: "/capturas/2 Iniciar Sesión (white).png" },
   { src: "/capturas/2.1 Crear Cuenta (white).png" },
   { src: "/capturas/3 Home (white).png" },
   { src: "/capturas/4 Buscar (white).png" },
   { src: "/capturas/4.1 Gasolineras (white).png" },
-  { src: "/capturas/4.2 Puntos de Interés (white).png" },
+  { src: "/capturas/4.2 Puntos de interés (white).png" },
   { src: "/capturas/4.2.1 Detalle Puntos de Interés (white).png" },
   { src: "/capturas/5 Mapa (white).png" },
   { src: "/capturas/6 Favoritos (white).png" },
   { src: "/capturas/7 User (white).png" },
-  { src: "/capturas/7.1 Editar Perfil (white).png" },
+  { src: "/capturas/7.1 Editar perfil (white).png" },
 ];
 
 const images_Dark = [
@@ -33,7 +30,7 @@ const images_Dark = [
   { src: "/capturas/5 Mapa (dark).png" },
   { src: "/capturas/6 Favoritos (dark).png" },
   { src: "/capturas/7 User (dark).png" },
-  { src: "/capturas/7.1 Editar Perfil (dark).png" },
+  { src: "/capturas/7.1 Editar perfil (dark).png" },
 ];
 
 const Slider = () => {

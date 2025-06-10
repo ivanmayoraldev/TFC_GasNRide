@@ -47,10 +47,8 @@
   --input_text: #ffffff;
   --input_border: #ffffff;
 
-  /* Sombras */
   --text_shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
 
-  /* Gradientes */
   --gradient_start: var(--nav_background);
   --gradient_end: var(--btn_download_bg);
   --gradient_start_percent: 15%;
