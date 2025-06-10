@@ -34,6 +34,8 @@
   /* Colores */
   --body_background: #18181b;
   --text_color: #ffffff;
+  --title_novedades: #ffffff;
+  --text_novedades: #000000;
   --text_span: #eab308;
   --nav_background: #23272f;
   --btn_download_bg: #334155;
@@ -57,6 +59,14 @@
   /* Clases específicas para dark mode */
   .text-black {
     color: var(--text_color);
+  }
+
+  .title-novedades {
+    color: var(--title_novedades);
+  }
+
+  .text-novedades {
+    color: var(--text_novedades);
   }
 
   .border-black {
@@ -153,3 +163,4 @@ body {
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
