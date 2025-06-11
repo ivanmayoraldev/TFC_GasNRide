@@ -72,7 +72,7 @@ const Slider = () => {
           <div
             key={idx}
             className="relative flex-shrink-0 rounded-xl overflow-hidden snap-start shadow-lg border border-gray-200 dark:border-gray-600"
-            style={{ width: "196.5px", height: "426px" }} // Reducido a la mitad
+            style={{ width: "196.5px", height: "426px" }}
           >
             <img
               src={img.src}

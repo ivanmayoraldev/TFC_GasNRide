@@ -37,7 +37,6 @@ const DarkMode = () => {
       onClick={() => setDarkMode((prev) => !prev)}
       className="relative w-14 h-7 flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300 focus:outline-none shadow"
     >
-      {/* Indicador del tema actual */}
       <span
         className={`w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${
           darkMode 
@@ -45,7 +44,6 @@ const DarkMode = () => {
             : 'bg-yellow-400 translate-x-0'
         }`}
       >
-        {/* Icono de luna para modo oscuro */}
         {darkMode ? (
           <svg
             className="w-full h-full p-1 text-white"
@@ -57,7 +55,6 @@ const DarkMode = () => {
             <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
           </svg>
         ) : (
-          // Icono de sol para modo claro
           <svg
             className="w-full h-full p-1 bg-yellow-500 text-white rounded-full"
             fill="none"

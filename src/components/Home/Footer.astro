@@ -2,7 +2,6 @@
   <footer class="py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <!-- Columna izquierda -->
         <div class="flex flex-col space-y-4">
           <span class="text-xl text-black dark:text-white font-semibold">Gas N Ride</span>
           <div class="flex flex-col space-y-2">
@@ -18,7 +17,6 @@
           </div>
         </div>
 
-        <!-- Columna derecha -->
         <div class="flex flex-col space-y-4">
           <span class="text-xl text-black dark:text-white font-semibold">Explora</span>
           <div class="flex flex-col space-y-2">
@@ -29,7 +27,6 @@
         </div>
       </div>
 
-      <!-- Copyright -->
       <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
         <div class="flex justify-center">
           <p class="text-sm text-gray-600 text-white-dark">&copy; 2025 Gas N Ride. Todos los derechos reservados.</p>
@@ -39,7 +36,6 @@
   </footer>
 </div>
 
-<!-- Privacy Modal -->
 <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
   <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
     <div class="flex justify-between items-center mb-4">
@@ -51,13 +47,39 @@
       </button>
     </div>
     <div class="text-sm sm:text-base text-gray-600 dark:text-gray-200">
-      <!-- Aquí va el contenido de la política de privacidad -->
-      <p>Contenido de la política de privacidad...</p>
+      <h3 class="font-semibold mb-2">1. Información que Recopilamos</h3>
+      <p class="mb-4">Gas N Ride recopila información básica para mejorar tu experiencia de usuario, incluyendo:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Datos de ubicación para mostrar gasolineras cercanas</li>
+        <li>Preferencias de búsqueda y filtros utilizados</li>
+        <li>Información de uso de la aplicación</li>
+      </ul>
+
+      <h3 class="font-semibold mb-2">2. Uso de la Información</h3>
+      <p class="mb-4">Utilizamos tu información para:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Proporcionar información actualizada de precios de combustible</li>
+        <li>Mejorar la precisión de las ubicaciones de gasolineras</li>
+        <li>Personalizar tu experiencia de usuario</li>
+        <li>Mantener la seguridad de la aplicación</li>
+      </ul>
+
+      <h3 class="font-semibold mb-2">3. Protección de Datos</h3>
+      <p class="mb-4">Tu privacidad es importante para nosotros. Implementamos medidas de seguridad para proteger tu información y nunca compartimos tus datos personales con terceros sin tu consentimiento.</p>
+
+      <h3 class="font-semibold mb-2">4. Tus Derechos</h3>
+      <p class="mb-4">Tienes derecho a:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Acceder a tus datos personales</li>
+        <li>Solicitar la eliminación de tu información</li>
+        <li>Modificar tus preferencias de privacidad</li>
+      </ul>
+
+      <p class="text-sm mt-4">Última actualización: Junio 2025</p>
     </div>
   </div>
 </div>
 
-<!-- Terms Modal -->
 <div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
   <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
     <div class="flex justify-between items-center mb-4">
@@ -69,8 +91,27 @@
       </button>
     </div>
     <div class="text-sm sm:text-base text-gray-600 dark:text-gray-200">
-      <!-- Aquí va el contenido de los términos y condiciones -->
-      <p>Contenido de los términos y condiciones...</p>
+      <h3 class="font-semibold mb-2">1. Uso del Servicio</h3>
+      <p class="mb-4">Gas N Ride es una aplicación informativa que proporciona datos sobre gasolineras y puntos de interés en la Comunidad de Madrid. Al utilizar nuestro servicio, aceptas estos términos y condiciones.</p>
+
+      <h3 class="font-semibold mb-2">2. Precisión de la Información</h3>
+      <p class="mb-4">Nos esforzamos por mantener la información actualizada, pero no podemos garantizar la precisión absoluta de los precios de combustible y ubicaciones en tiempo real. Te recomendamos verificar la información directamente con las gasolineras.</p>
+
+      <h3 class="font-semibold mb-2">3. Limitaciones de Responsabilidad</h3>
+      <p class="mb-4">Gas N Ride no se hace responsable de:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Cambios en los precios de combustible no actualizados</li>
+        <li>Errores en las ubicaciones de gasolineras</li>
+        <li>Problemas de conectividad o disponibilidad del servicio</li>
+      </ul>
+
+      <h3 class="font-semibold mb-2">4. Propiedad Intelectual</h3>
+      <p class="mb-4">Todo el contenido de Gas N Ride, incluyendo textos, imágenes y diseño, está protegido por derechos de autor. No está permitida la reproducción o uso comercial sin autorización.</p>
+
+      <h3 class="font-semibold mb-2">5. Modificaciones</h3>
+      <p class="mb-4">Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en la aplicación.</p>
+
+      <p class="text-sm mt-4">Última actualización: Junio 2025</p>
     </div>
   </div>
 </div>
@@ -104,7 +145,7 @@
     }
   }
 
-  // Configurar los modales
+  // Configurar los modales para su correcto funcionamiento.
   setupModal('privacy-modal-trigger', 'privacy-modal', 'close-privacy-modal');
   setupModal('terms-modal-trigger', 'terms-modal', 'close-terms-modal');
 </script>

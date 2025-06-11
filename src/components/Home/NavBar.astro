@@ -1,27 +1,21 @@
 ---
-// Importamos el componente DarkMode para el cambio de tema
 import DarkMode from '../react-components/DarkMode.jsx'
 ---
 
-<!-- Barra de navegación principal -->
 <nav id="nav" class="fixed top-0 left-0 w-full z-50 bg-gas-n-ride duration-200 dark:bg-black">
   <div class="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
-    <!-- Checkbox oculto para controlar el menú móvil -->
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
-    <!-- Contenedor principal de la navegación -->
     <div class="flex flex-wrap items-center justify-between">
-      <!-- Logo de la aplicación -->
       <a href="/" class="flex items-center justify-center w-[200px] sm:w-[250px] md:w-[300px] transition transform hover:scale-105">
         <img id="theme-logo" src="/logo.png" class="h-14 sm:h-16 md:h-20 w-auto object-contain" alt="Logo Gas N Ride" />
       </a>
 
-      <!-- Botón de tema oscuro para móvil -->
+      <!-- Botón de cambiar el tema solo para mobile-->
       <div class="md:hidden">
-        <DarkMode client:only="react" />
+        <DarkMode client:only="react"/>
       </div>
 
-      <!-- Botón del menú móvil -->
       <button
         id="menu-button"
         aria-expanded="false"
@@ -42,7 +36,6 @@ import DarkMode from '../react-components/DarkMode.jsx'
         </svg>
       </button>
 
-      <!-- Menú de navegación -->
       <div
         id="mobile-menu"
         class="hidden peer-checked:block w-full text-center md:block md:w-auto md:items-center py-6 md:py-0 md:mt-0"
@@ -50,7 +43,6 @@ import DarkMode from '../react-components/DarkMode.jsx'
         <ul
           class="flex flex-col justify-center md:flex-row mt-2 md:mt-0 md:space-x-4 lg:space-x-6 font-medium w-full md:items-center rounded-lg p-4 md:p-0"
         >
-          <!-- Enlaces de navegación -->
           <li>
             <a
               href="/"
@@ -88,7 +80,6 @@ import DarkMode from '../react-components/DarkMode.jsx'
               Descargar
             </a>
           </li>
-          <!-- Botón de tema oscuro para escritorio -->
           <li class="hidden md:block md:ml-4">
             <DarkMode client:only="react" />
           </li>
@@ -97,10 +88,8 @@ import DarkMode from '../react-components/DarkMode.jsx'
     </div>
   </div>
 
-  <!-- Script para la funcionalidad del menú móvil y efectos de scroll -->
   <script type="module">
     document.addEventListener("DOMContentLoaded", () => {
-      // Elementos del DOM
       const btn = document.getElementById("menu-button");
       const menu = document.getElementById("mobile-menu");
       if (!btn || !menu) return;
@@ -130,7 +119,7 @@ import DarkMode from '../react-components/DarkMode.jsx'
         });
       });
 
-      // Efecto de borde al hacer scroll
+      // Efecto de borde al hacer scroll para que quede un efecto de borde en la barra de navegación.
       window.addEventListener("scroll", () => {
         const nav = document.getElementById("nav");
         if (window.scrollY > 0) {
@@ -140,7 +129,7 @@ import DarkMode from '../react-components/DarkMode.jsx'
         }
       });
 
-      // Cambio de logo según el tema
+      // Cambio de logo según el tema dark o light.
       const themeLogo = document.getElementById('theme-logo');
       if (themeLogo) {
         const observer = new MutationObserver((mutations) => {
