@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Colores */
+  /* Colores light*/
   --body_background: #ffffff;
   --text_color: #000000;
   --text_span: #1d4ed8;
@@ -17,10 +17,10 @@
   --input_text: #000000;
   --input_border: #000000;
 
-  /* Sombras */
+  /* Sombras light*/
   --text_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  /* Gradientes */
+  /* Gradientes light */
   --gradient_start: var(--nav_background);
   --gradient_end: var(--btn_download_bg);
   --gradient_start_percent: 15%;
@@ -31,7 +31,7 @@
 }
 
 [data-theme="dark"] {
-  /* Colores */
+  /* Colores dark*/
   --body_background: #18181b;
   --text_color: #ffffff;
   --title_novedades: #ffffff;
@@ -145,6 +145,7 @@ body {
   color: var(--text_span);
 }
 
+/* He usado esta animacion para el slider infinito en las tecnologias, solo lo uso en mobile*/
 @keyframes marquee {
     0% {
       transform: translateX(0);
